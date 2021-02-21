@@ -4,7 +4,9 @@ public class FizzBuzzPop extends FizzBuzzGame {
 
     @Override
     public String play(Integer number) {
-        if (number % 35 == 0) {
+        if (number % 105 == 0) {
+            return "fizz buzz pop";
+        } else if (number % 35 == 0) {
             return "buzz pop";
         } else if (number % 21 == 0) {
             return "fizz pop";

@@ -3,6 +3,7 @@ package com.ndiamanti.fizzbuzz;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.function.Function;
@@ -67,5 +68,13 @@ class FizzBuzzGameTest {
         Function<Integer, String> pip = i -> i % 2 == 0 ? "pip" : "";
         List<Function<Integer, String>> functionList = Collections.singletonList(pip);
         assertEquals("pip", fizzBuzzGame.play(10, functionList));
+    }
+
+    @Test
+    public void play_shouldUseCustomSubstitutionLinked() {
+        Function<Integer, String> pip = i -> i % 2 == 0 ? "pip" : "";
+        Function<Integer, String> boom = i -> i % 11 == 0 ? "boom" : "";
+        List<Function<Integer, String>> functionList = Arrays.asList(pip, boom);
+        assertEquals("pip boom", fizzBuzzGame.play(22, functionList));
     }
 }

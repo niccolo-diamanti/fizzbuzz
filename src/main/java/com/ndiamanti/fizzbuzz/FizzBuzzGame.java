@@ -23,6 +23,7 @@ public class FizzBuzzGame {
     private String evaluateSubstitutionFunctionList(Integer number, List<Function<Integer, String>> substitutionFunctionList) {
         return substitutionFunctionList.stream()
                 .map(function -> function.apply(number))
+                .filter(s -> !s.isEmpty() && !s.isBlank())
                 .collect(Collectors.joining(" "))
                 .trim();
     }

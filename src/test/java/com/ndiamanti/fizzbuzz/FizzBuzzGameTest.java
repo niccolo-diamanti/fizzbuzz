@@ -20,4 +20,11 @@ class FizzBuzzGameTest {
         assertEquals("fizz", fizzBuzzGame.play(3));
         assertEquals("fizz", fizzBuzzGame.play(6));
     }
+
+    @Test
+    public void play_shouldReturnBuzz() {
+        FizzBuzzGame fizzBuzzGame = new FizzBuzzGame();
+        assertEquals("buzz", fizzBuzzGame.play(5));
+        assertEquals("buzz", fizzBuzzGame.play(10));
+    }
 }

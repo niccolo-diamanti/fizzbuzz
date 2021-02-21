@@ -1,9 +1,12 @@
 package com.ndiamanti.fizzbuzz;
 
-public class FizzBuzzGame {
+public class FizzBuzzPop extends FizzBuzzGame {
 
+    @Override
     public String play(Integer number) {
-        if (number % 15 == 0)
+        if (number % 7 == 0) {
+            return "pop";
+        } else if (number % 15 == 0)
             return "fizz buzz";
         else if (number % 3 == 0)
             return "fizz";
